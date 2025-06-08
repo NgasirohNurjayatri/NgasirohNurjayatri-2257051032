@@ -1,14 +1,15 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #EFEBE9; /
-  color: #4E342E;      
+  background: #EFEBE9;
+  color: #4E342E;
 }
 
 header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  background: #D7CCC8; 
+  background: #D7CCC8;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -47,22 +48,30 @@ nav {
   justify-content: center;
   padding: 10px 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .tabs li {
   background: #ffffff;
   color: #5D4037;
   padding: 10px 20px;
-  margin: 0 5px;
+  margin: 5px;
   border-radius: 20px;
   border: 1px solid #A1887F;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   font-size: 14px;
 }
 
 .tabs li:hover {
   background-color: #D7CCC8;
+}
+
+.tabs li.active {
+  background-color: #8D6E63;
+  color: white;
+  font-weight: bold;
+  border-color: #6D4C41;
 }
 
 main {
@@ -119,4 +128,21 @@ footer {
 
 .content-section {
   display: none;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profil-img {
+    margin-bottom: 10px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
 }
